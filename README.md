@@ -36,3 +36,9 @@ INSTALACION DE PAQUETES
    npm install --save-dev tailwindcss@3.3.2
    npx tailwindcss init
    ```
+
+2. Iconos - se ven lindos los de AntDesign
+
+   ```bash
+   npm install @expo/vector-icons
+   ```

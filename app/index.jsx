@@ -5,9 +5,9 @@ import { Text, View } from "react-native";
 export default function App() {
    return (
       <View className="flex-1 items-center justify-center bg-white">
-         <Text className="text-3xl">La COMU App!</Text>
+         <Text className="text-3xl font-pextrabold">COMU App!</Text>
          <StatusBar style="auto" />
-         <Link href={"/profile"}>Ir al Perfil</Link>
+         <Link href={"/home"}>Ir al Inicio</Link>
       </View>
    );
 }
