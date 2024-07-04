@@ -70,7 +70,7 @@ const TabIcon = ({
    iconSize = 24,
    iconsPackage,
 }) => (
-   <View className={"items-center justify-center"}>
+   <View className={"items-center justify-around h-full py-2"}>
       {iconImg ? (
          <Image
             source={icon}
@@ -107,15 +107,25 @@ const TabsLayout = () => {
             screenOptions={{ tabBarShowLabel: false }}>
             {data.map((item, i) => (
                <Tabs.Screen
+                  key={`key-Tabs.Screen-${i}`}
                   name={item.name}
                   options={{
                      title: item.title,
                      headerShown: false,
+                     tabBarActiveTintColor: "#FFA001",
+                     tabBarInactiveTintColor: "#CDCDE0",
+                     tabBarStyle: {
+                        backgroundColor: "#161622",
+                        borderTopWidth: 1,
+                        borderTopColor: "#FFA001",
+                        height: 65,
+                     },
                      tabBarIcon: ({ color, focused }) => (
                         <TabIcon
-                           key={`key-${i}`}
+                           key={`key-TabIcon-${i}`}
                            iconImg={item.iconImg}
                            icon={item.icon}
+                           iconSize={item.iconSize}
                            iconsPackage={item.iconsPackage}
                            color={color}
                            name={item.title}

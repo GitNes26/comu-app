@@ -7,7 +7,9 @@ export default function App() {
       <View className="flex-1 items-center justify-center bg-white">
          <Text className="text-3xl font-pextrabold">COMU App!</Text>
          <StatusBar style="auto" />
-         <Link href={"/home"}>Ir al Inicio</Link>
+         <Link href={"/home"} className="pt-5">
+            Ir al Inicio
+         </Link>
       </View>
    );
 }
