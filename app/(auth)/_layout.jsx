@@ -1,14 +1,32 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
 const AuthLayout = () => {
+   const data = [
+      {
+         name: "sign-in",
+         options: { headerShown: false },
+      },
+      {
+         name: "sign-up",
+         options: { headerShown: false },
+      },
+   ];
+
    return (
-      <View>
-         <Text>AuthLayout</Text>
-      </View>
+      <>
+         <Stack>
+            {data.map((item) => (
+               <Stack.Screen
+                  name={item.name}
+                  options={{ headerShown: item.options.headerShown }}
+               />
+            ))}
+         </Stack>
+         <StatusBar backgroundColor="#161622" style="inverted" />
+      </>
    );
 };
 
 export default AuthLayout;
-
-const styles = StyleSheet.create({});
