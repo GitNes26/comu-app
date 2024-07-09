@@ -9,6 +9,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { FontAwesome6 } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+import colors from "../../constants/colors";
 
 const data = [
    {
@@ -112,12 +113,12 @@ const TabsLayout = () => {
                   options={{
                      title: item.title,
                      headerShown: false,
-                     tabBarActiveTintColor: "#FFA001",
-                     tabBarInactiveTintColor: "#CDCDE0",
+                     tabBarActiveTintColor: colors.secondary.DEFAULT,
+                     tabBarInactiveTintColor: colors.gray.DEFAULT,
                      tabBarStyle: {
-                        backgroundColor: "#161622",
+                        backgroundColor: colors.primary.DEFAULT,
                         borderTopWidth: 1,
-                        borderTopColor: "#FFA001",
+                        borderTopColor: colors.secondary.DEFAULT,
                         height: 65,
                      },
                      tabBarIcon: ({ color, focused }) => (

@@ -4,6 +4,7 @@ import { Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import images from "../constants/images";
 import ButtonCompnent from "../components/ButtonCompnent";
+import colors from "../constants/colors";
 
 export default function App() {
    return (
@@ -53,7 +54,7 @@ export default function App() {
                />
             </View>
          </ScrollView>
-         <StatusBar backgroundColor="#161622" style="inverted" />
+         {/* <StatusBar backgroundColor={colors.primary.DEFAULT} style="inverted" /> */}
       </SafeAreaView>
    );
 }
