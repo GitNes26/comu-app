@@ -13,7 +13,6 @@ const PreviewCardComponent = ({
       // creator: { avatar, name },
    },
 }) => {
-   console.log("🚀 ~ thumbnailUrl:", thumbnailUrl);
    const [play, setPlay] = useState(false);
 
    return (
@@ -33,12 +32,12 @@ const PreviewCardComponent = ({
                <View className={"justify-center flex-1 ml-3 gap-y-1"}>
                   <Text
                      className={"text-white font-psemibold text-sm"}
-                     numberOfLines={10}>
+                     numberOfLines={2}>
                      {title}
                   </Text>
                   <Text
                      className={"text-gray-100 font-pregular text-sm"}
-                     numberOfLines={10}>
+                     numberOfLines={2}>
                      {title}
                   </Text>
                </View>
@@ -53,13 +52,14 @@ const PreviewCardComponent = ({
          </View>
 
          {play ? (
-            <Text>Reproducir</Text>
+            <Text className={"text-white"}>Reproduciendo...</Text>
          ) : (
             <TouchableOpacity
                activeOpacity={0.7}
                className={
                   "w-full h-60 rounded-xl mt-3 relative justify-center items-center"
-               }>
+               }
+               onPress={() => setPlay(true)}>
                <Image
                   source={{ uri: thumbnailUrl }}
                   className="w-full h-full rounded-xl mt-3"

@@ -22,7 +22,7 @@ const Home = () => {
       isLoading,
       refetch: refetchPhotos,
    } = useFetch(getAllPhotos);
-   console.log("🚀 ~ Home ~ photos:", photos);
+   // console.log("🚀 ~ Home ~ photos:", photos);
    const { data: users, refetch: refetchUsers } = useFetch(getAllPhotos);
    // const videos = [
    //    { id: "cards.png", image: "cards" },
@@ -42,9 +42,8 @@ const Home = () => {
    return (
       <SafeAreaView className={"bg-primary h-full"}>
          <FlatList
-            // data={[]}
             data={photos}
-            // keyExtractor={({ item }) => item.id}
+            keyExtractor={(item) => item.$id}
             renderItem={({ item }) => <PreviewCardComponent video={item} />}
             ListHeaderComponent={() => (
                <View className={"my-6 px-4 space-y-6"}>
@@ -74,7 +73,8 @@ const Home = () => {
                         Ultimas Predicas
                      </Text>
                      <CarruselComponent
-                        data={[{ id: 1 }, { id: 2 }, { id: 3 }]}
+                        data={photos}
+                        // data={[{ id: 1 }, { id: 2 }, { id: 3 }]}
                      />
                   </View>
                </View>

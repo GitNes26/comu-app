@@ -54,7 +54,11 @@ export default function App() {
                />
             </View>
          </ScrollView>
-         {/* <StatusBar backgroundColor={colors.primary.DEFAULT} style="inverted" /> */}
+         <StatusBar
+            backgroundColor={colors.primary.DEFAULT}
+            style="inverted"
+            animated
+         />
       </SafeAreaView>
    );
 }

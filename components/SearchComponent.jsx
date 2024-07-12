@@ -1,4 +1,5 @@
 import {
+   Alert,
    Image,
    StyleSheet,
    Text,
@@ -9,6 +10,7 @@ import {
 import React, { useState } from "react";
 import colors from "../constants/colors";
 import icons from "../constants/icons";
+import { usePathname } from "expo-router";
 
 const SearchComponent = ({
    title,
@@ -21,9 +23,15 @@ const SearchComponent = ({
    ...props
 }) => {
    const [showPassword, setShowPassword] = useState(isPassword);
+   const pathname = usePathname();
+   const [query, setQuery] = useState("");
 
    const handlePressIcon = () => {
-      value = "";
+      if (!query)
+         return Alert.alert(
+            "Sin Busqueda",
+            "Por favor ingresa un valor para mostrar resultados",
+         );
    };
 
    return (
@@ -33,12 +41,10 @@ const SearchComponent = ({
             className={`border-2 border-black-200 w-full h-16 px-4 bg-black-100 rounded-2xl focus:border-secondary items-center flex-row space-x-4`}>
             <TextInput
                className={"text-base mt-0.5 text-white flex-1 font-pregular "}
-               value={value}
+               value={query}
                placeholder={placeholder}
                placeholderTextColor={colors.gray.DEFAULT}
-               onChangeText={handlChangeText}
-               secureTextEntry={showPassword}
-               keyboardType={keyboardType}
+               onChangeText={(e) => setQuery(e)}
             />
             <TouchableOpacity onPress={handlePressIcon}>
                <Image

@@ -30,10 +30,10 @@ const SignIn = () => {
             ToastAndroid.LONG,
             ToastAndroid.CENTER,
          );
-         setTimeout(() => {
-            setIsSubmitting(false);
-            router.push("/home");
-         }, 1500);
+         // setTimeout(() => {
+         setIsSubmitting(false);
+         router.push("/home");
+         // }, 1500);
       } catch (error) {
          console.log("🚀 ~ onSubmit ~ error:", error);
          throw Error("buyuu");

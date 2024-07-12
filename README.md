@@ -42,3 +42,9 @@ INSTALACION DE PAQUETES
    ```bash
    npm install @expo/vector-icons
    ```
+
+3. Animaciones - expo av, se comenta que significa audio y video
+
+   ```bash
+   npm install react-native-animatable expo-av
+   ```
